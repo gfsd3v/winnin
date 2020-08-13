@@ -7,7 +7,6 @@ DefaultTheme.colors = {
   white: `#fff`,
   shadows: `rgba(0, 0, 0, 0.57)`,
   hoverColor: `rgba(0, 0, 0, 0.15)`,
-
   lightBlack: `rgba(0, 0, 0, 0.80)`,
   blackText: `rgba(0, 0, 0, 0.60)`,
 };
