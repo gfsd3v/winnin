@@ -3,7 +3,7 @@ const DefaultTheme = {};
 DefaultTheme.colors = {
   primary: `orange`,
   lightPrimary: `rgba(0, 0, 0, 0.80)`,
-  background: `#ebeff3`,
+  background: 'white',
   text: `#fff`,
   blackText: `rgba(0, 0, 0, 0.60)`,
   lightBlack: `rgba(84, 84, 84, 0.51)`,
