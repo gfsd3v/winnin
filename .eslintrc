@@ -2,7 +2,8 @@
   "extends": "wesbos",
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/prop-types": "off"
   },
   "settings": {
     "import/resolver": {

@@ -4,7 +4,7 @@ import Header from 'components/Header';
 import Content from 'components/Content';
 import Filter from 'components/Filter';
 import PostCard from 'components/PostCard';
-import LoadMore from 'components/LoadMore';
+import Button from 'components/Button';
 import PostService from 'services/postsService';
 
 const HomePage = () => {
@@ -55,7 +55,7 @@ const HomePage = () => {
       {currentPosts.map(postObj => (
         <PostCard key={postObj.id} postObj={postObj} />
       ))}
-      <LoadMore onClick={handleLoadMore} />
+      <Button onClick={handleLoadMore} />
     </>
   );
 

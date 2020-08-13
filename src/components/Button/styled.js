@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const LoadMore = styled.div`
+export const Button = styled.div`
   color: #fff;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@ const LoadMore = styled.div`
   border: none;
   transition: all 0.4s ease 0s;
   cursor: pointer;
-  width: 100%;
+  width: ${props => props.width || '100%'};
 
   :hover {
     background: #ff5500;
@@ -24,5 +24,3 @@ const LoadMore = styled.div`
     transition: all 0.4s ease 0s;
   }
 `;
-
-export default LoadMore;
