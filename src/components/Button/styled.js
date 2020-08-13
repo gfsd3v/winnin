@@ -21,8 +21,6 @@ export const Button = styled.div`
   :hover {
     background: ${defaultTheme.colors.primary};
     letter-spacing: 1px;
-    -webkit-box-shadow: 0px 5px 40px -10px ${defaultTheme.colors.shadows};
-    -moz-box-shadow: 0px 5px 40px -10px ${defaultTheme.colors.shadows};
     box-shadow: 5px 40px -10px ${defaultTheme.colors.shadows};
     transition: all 0.4s ease 0s;
   }
