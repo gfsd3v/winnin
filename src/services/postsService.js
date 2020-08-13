@@ -3,14 +3,15 @@ import Api from "services/apiService";
 class PostsService {
   static axiosInstance = Api.initialize();
 
-  static getPosts = async (filter) => {
+  static getPosts = async (filter, lastId) => {
+    const getParams = () => {
+      return lastId ? { limit: "5", after: `t3_${lastId}` } : { limit: "5" };
+    };
     try {
       const serverResponse = await PostsService.axiosInstance.get(
         `/${filter}/.json`,
         {
-          params: {
-            limit: "4",
-          },
+          params: getParams(),
         }
       );
 
@@ -20,35 +21,21 @@ class PostsService {
     }
   };
 
-  static getPostsAfter = async (filter, from) => {
-    try {
-      const serverResponse = await PostsService.axiosInstance.get(
-        "r/reactjs.json",
-        {
-          params: {
-            limit: "10",
-          },
-        }
-      );
-
-      const posts = serverResponse.data.data.children.map((obj) => obj.data);
-      console.log(posts);
-      return serverResponse.data;
-    } catch (e) {
-      throw e;
-    }
-  };
-
   static transformRawPosts = (redditPostsData) => {
     const formatedPostsObj = redditPostsData.map((post, key) => {
+      console.log(post.data)
       return {
         id: post.data.id,
-        thumb: post.data.thumbnail,
+        thumb:
+          post.data.thumbnail !== "self" && post.data.thumbnail !== "default"
+            ? post.data.thumbnail
+            : "https://cdn140.picsart.com/320945674138201.jpg?type=webp&to=crop&r=256",
         title: post.data.title,
         createdSince: PostsService.timeSince(post.data.created_utc),
         author: post.data.author,
         authorProfileUrl: `https://www.reddit.com/u/${post.data.author}`,
-        postUrl: post.data.url,
+        postUrl: `https://www.reddit.com${post.data.permalink}`,
+        url: post.data.url,
         domain: post.data.domain,
       };
     });

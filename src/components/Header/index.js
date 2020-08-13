@@ -5,7 +5,7 @@ import { HeaderWrapper } from "./styled";
 const Header = () => {
   return (
     <HeaderWrapper>
-      <Text fontSize="2em">ReactJS</Text>
+      <Text fontSize="2em">REACTJS</Text>
     </HeaderWrapper>
   );
 };

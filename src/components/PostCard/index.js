@@ -1,22 +1,35 @@
 import React from "react";
 import {
   PostListWrapper,
-  PostListImageWrapper,
+  PostListImage,
   PostTitle,
-  PostDate,
+  PostData,
   PostDomain,
 } from "./styled";
 
 const PostCard = ({ postObj }) => {
   return (
     <PostListWrapper>
-      <PostListImageWrapper>
-        <img src={postObj.thumb} alt="post thumbnail" />
-      </PostListImageWrapper>
+      <PostListImage imageUrl={postObj.thumb} />
       <div>
-        <PostTitle>{postObj.title}</PostTitle>
-        <PostDate>{`enviado a ${postObj.createdSince}`}</PostDate>
-        <PostDomain>{postObj.domain}</PostDomain>
+        <PostTitle onClick={() => window.open(postObj.postUrl, "_blank")}>
+          {postObj.title}
+        </PostTitle>
+        <PostData>
+          {`posted ${postObj.createdSince} ago by `}{" "}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={postObj.authorProfileUrl}
+          >
+            {postObj.author}
+          </a>
+        </PostData>
+        <PostDomain>
+          <a target="_blank" rel="noopener noreferrer" href={postObj.url}>
+            {postObj.domain}
+          </a>
+        </PostDomain>
       </div>
     </PostListWrapper>
   );

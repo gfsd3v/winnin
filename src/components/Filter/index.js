@@ -6,19 +6,19 @@ const Filter = ({ selectedFilter, onFilter = () => {} }) => {
     <FilterWrapper>
       <FilterButton
         enable={selectedFilter.filterValue === "hot" ? true : false}
-        onClick={() => onFilter({ filterValue: "hot" })}
+        onClick={() => onFilter({ filterValue: "hot", force: true })}
       >
         <div>HOT</div>
       </FilterButton>
       <FilterButton
         enable={selectedFilter.filterValue === "new" ? true : false}
-        onClick={() => onFilter({ filterValue: "new" })}
+        onClick={() => onFilter({ filterValue: "new" , force: true})}
       >
         <div>NEW</div>
       </FilterButton>
       <FilterButton
         enable={selectedFilter.filterValue === "rising" ? true : false}
-        onClick={() => onFilter({ filterValue: "rising" })}
+        onClick={() => onFilter({ filterValue: "rising", force: true })}
       >
         <div>RISING</div>
       </FilterButton>
