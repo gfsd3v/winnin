@@ -1,5 +1,5 @@
 ## Summary
-This is a simple interface that uses the RedditAPI to display and filter the posts of the ReactJS subreddit.
+This is a simple responsive interface that uses the RedditAPI to display and filter the posts of the ReactJS subreddit.
 [Here's the app in production](https://winnin-challenge.netlify.app/)
 
 ## Scripts
