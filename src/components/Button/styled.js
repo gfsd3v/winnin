@@ -7,13 +7,14 @@ export const Button = styled.div`
   align-items: center;
   text-transform: uppercase;
   text-decoration: none;
-  background: #666666;
-  height: 50px;
+  background: ${props => (props.active ? '#ff5500' : '#666666')};
+  height: 35px;
   border-radius: 5px;
   border: none;
   transition: all 0.4s ease 0s;
   cursor: pointer;
   width: ${props => props.width || '100%'};
+  margin: ${props => props.margin || '0'};
 
   :hover {
     background: #ff5500;

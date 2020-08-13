@@ -1,14 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import * as serviceWorker from "./serviceWorker";
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// Page
+import HomePage from 'pages/HomePage';
 
 // Style
-import "normalize.css";
-import "typeface-roboto";
+import 'normalize.css';
+import 'typeface-roboto';
 
-//Page
-import HomePage from "pages/HomePage";
+import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<HomePage />, document.getElementById("root"));
+ReactDOM.render(<HomePage />, document.getElementById('root'));
 
 serviceWorker.register();

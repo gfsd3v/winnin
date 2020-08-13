@@ -55,7 +55,7 @@ const HomePage = () => {
       {currentPosts.map(postObj => (
         <PostCard key={postObj.id} postObj={postObj} />
       ))}
-      <Button onClick={handleLoadMore} />
+      <Button onClick={handleLoadMore}> + Veja Mais </Button>
     </>
   );
 
