@@ -1,13 +1,13 @@
 ## Scripts
 
 First, is mandatory to run this script before any other, this will install all the project dependencies.
-### `yarn install / npm install`
+# `yarn install / npm install`
 
 Runs the developer server in [http://localhost:3000](http://localhost:3000).
-### `yarn start / npm start`
+# `yarn start / npm start`
 
 Builds the app bundle in production enviroment, ready do be deployed.
-### `yarn build / npm build`
+# `yarn build / npm build`
 
 
 ## Stack
