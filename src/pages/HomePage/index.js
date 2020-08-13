@@ -5,6 +5,7 @@ import Content from 'components/Content';
 import Filter from 'components/Filter';
 import PostCard from 'components/PostCard';
 import Button from 'components/Button';
+import SpinningLoader from 'components/SpinningLoader';
 import PostService from 'services/postsService';
 
 const HomePage = () => {
@@ -51,13 +52,15 @@ const HomePage = () => {
 
   const renderPosts = () =>
     isLoading ? (
-      <div>LOADING.......</div>
+      <SpinningLoader />
     ) : (
       <>
         {currentPosts.map(postObj => (
           <PostCard key={postObj.id} postObj={postObj} />
         ))}
-        <Button onClick={handleLoadMore}> + Veja Mais </Button>
+        <Button loading={loadMore} onClick={handleLoadMore}>
+          + Veja Mais
+        </Button>
       </>
     );
 
