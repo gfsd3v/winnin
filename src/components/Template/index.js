@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import DefaultTheme from 'themes/defaultTheme';
+import { defaultTheme } from 'themes';
 
 const Template = styled.div`
   display: grid;
@@ -12,7 +12,7 @@ const Template = styled.div`
   height: 100vh;
   width: 100%;
   margin: 0;
-  font-family: ${DefaultTheme.font.primary};
+  font-family: ${defaultTheme.font.primary};
 `;
 
 export default Template;
