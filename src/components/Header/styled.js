@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import DefaultTheme from 'themes/defaultTheme';
+import { defaultTheme } from 'themes';
 
 export const HeaderWrapper = styled.div`
   grid-area: header;
-  background: ${DefaultTheme.colors.lightPrimary};
+  background: ${defaultTheme.colors.lightBlack};
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 500;
   font-size: 2em;
-  color: white;
+  color: ${defaultTheme.colors.white};
 
   div {
-    color: #ff5500;
+    color: ${defaultTheme.colors.primary};
   }
 `;

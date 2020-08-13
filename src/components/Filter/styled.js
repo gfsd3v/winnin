@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import DefaultTheme from 'themes/defaultTheme';
+import { defaultTheme } from 'themes';
 
 export const FilterWrapper = styled.div`
   grid-area: filter;
-  background: ${DefaultTheme.colors.background};
+  background: ${defaultTheme.colors.background};
   display: flex;
   justify-content: center;
   padding: 0 2vw;

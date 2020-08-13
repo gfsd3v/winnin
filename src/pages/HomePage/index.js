@@ -18,17 +18,16 @@ const HomePage = () => {
 
   const initializePageLogic = async () => {
     try {
-      // When update is for load more we pass the lastId of the last post in currentPosts state
+      // When update is for load more we use the lastId of the last post in currentPosts state
+      // and add the results to the currentPosts state
       if (loadMore && currentPosts && !currentFilter.force) {
         const lastPostId = currentPosts[currentPosts.length - 1].id;
         const newPosts = await PostService.getPosts(
           currentFilter.filterValue,
           lastPostId
         );
-
         setCurrentPosts(cP => cP.concat(newPosts));
         setLoadMore(false);
-
         window.setTimeout(() => {
           window.scrollTo({
             top: document.body.scrollHeight,
@@ -41,7 +40,7 @@ const HomePage = () => {
         setIsLoading(false);
       }
     } catch (error) {
-      console.error('Failed at HomePage initializePageLogic', error);
+      console.error('Failed at HomePage initializePageLogic function', error);
     }
   };
 
@@ -50,14 +49,17 @@ const HomePage = () => {
     setCurrentFilter({ ...currentFilter, force: false });
   };
 
-  const renderPosts = () => (
-    <>
-      {currentPosts.map(postObj => (
-        <PostCard key={postObj.id} postObj={postObj} />
-      ))}
-      <Button onClick={handleLoadMore}> + Veja Mais </Button>
-    </>
-  );
+  const renderPosts = () =>
+    isLoading ? (
+      <div>LOADING.......</div>
+    ) : (
+      <>
+        {currentPosts.map(postObj => (
+          <PostCard key={postObj.id} postObj={postObj} />
+        ))}
+        <Button onClick={handleLoadMore}> + Veja Mais </Button>
+      </>
+    );
 
   React.useEffect(() => {
     initializePageLogic();
@@ -71,7 +73,7 @@ const HomePage = () => {
         selectedFilter={currentFilter}
         onFilter={filter => setCurrentFilter(filter)}
       />
-      <Content>{isLoading ? <div>LOADING.......</div> : renderPosts()}</Content>
+      <Content>{renderPosts()}</Content>
     </Template>
   );
 };

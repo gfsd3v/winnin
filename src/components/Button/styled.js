@@ -1,13 +1,15 @@
 import styled from 'styled-components';
+import { defaultTheme } from 'themes';
 
 export const Button = styled.div`
-  color: #fff;
+  color: ${defaultTheme.colors.white};
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
   text-decoration: none;
-  background: ${props => (props.active ? '#ff5500' : '#666666')};
+  background: ${props =>
+    props.active ? defaultTheme.colors.primary : defaultTheme.colors.lightGray};
   height: 35px;
   border-radius: 5px;
   border: none;
@@ -17,11 +19,11 @@ export const Button = styled.div`
   margin: ${props => props.margin || '0'};
 
   :hover {
-    background: #ff5500;
+    background: ${defaultTheme.colors.primary};
     letter-spacing: 1px;
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -webkit-box-shadow: 0px 5px 40px -10px ${defaultTheme.colors.shadows};
+    -moz-box-shadow: 0px 5px 40px -10px ${defaultTheme.colors.shadows};
+    box-shadow: 5px 40px -10px ${defaultTheme.colors.shadows};
     transition: all 0.4s ease 0s;
   }
 `;

@@ -15,7 +15,7 @@ const PostCard = ({ postObj }) => (
         {postObj.title}
       </PostTitle>
       <PostData>
-        {`posted ${postObj.createdSince} ago by `}{' '}
+        {`enviado ha ${postObj.createdSince} `}
         <a
           target="_blank"
           rel="noopener noreferrer"

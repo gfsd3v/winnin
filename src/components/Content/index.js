@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import DefaultTheme from 'themes/defaultTheme';
+import { defaultTheme } from 'themes';
 
 const Content = styled.div`
   grid-area: content;
-  background: ${DefaultTheme.colors.background};
+  background: ${defaultTheme.colors.background};
   padding: 0 11em;
   margin-bottom: 40px;
 

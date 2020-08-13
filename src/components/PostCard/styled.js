@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { defaultTheme } from 'themes';
 
 export const PostListWrapper = styled.div`
   padding: 10px 0;
@@ -9,12 +10,12 @@ export const PostListWrapper = styled.div`
   font-size: 12px;
 
   :hover {
-    background: rgba(0, 0, 0, 0.15);
+    background: ${defaultTheme.colors.hoverColor};
   }
 
   a {
     cursor: pointer;
-    color: #ff5500;
+    color: ${defaultTheme.colors.primary};
   }
 `;
 
@@ -23,7 +24,8 @@ export const PostListImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(${props => props.imageUrl || 'black'});
+  background-image: url(${props =>
+    props.imageUrl || defaultTheme.colors.lightBlack});
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -33,14 +35,14 @@ export const PostTitle = styled.div`
   font-size: 16px;
   font-weight: bolder;
   margin: 0 0 5px;
-  color: black;
+  color: ${defaultTheme.colors.lightBlack};
   cursor: pointer;
 `;
 
 export const PostData = styled.div`
   font-size: 12px;
   margin: 0 0 5px;
-  color: black;
+  color: ${defaultTheme.colors.blackText};
 `;
 
 export const PostDomain = styled.div`
@@ -49,9 +51,9 @@ export const PostDomain = styled.div`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: black;
+  color: ${defaultTheme.colors.blackText};
 
   a {
-    color: black;
+    color: ${defaultTheme.colors.lightBlack};
   }
 `;
