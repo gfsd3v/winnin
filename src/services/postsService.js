@@ -5,7 +5,7 @@ class PostsService {
 
   static getPosts = async (filter, lastId) => {
     const getParams = () =>
-      lastId ? { limit: '5', after: `t3_${lastId}` } : { limit: '5' };
+      lastId ? { limit: '10', after: `t3_${lastId}` } : { limit: '5' };
     try {
       const serverResponse = await PostsService.axiosInstance.get(
         `/${filter}/.json`,
