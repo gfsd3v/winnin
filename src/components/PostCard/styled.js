@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const PostListWrapper = styled.div`
   padding: 10px 0;
@@ -23,7 +23,7 @@ export const PostListImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(${(props) => props.imageUrl || "black"});
+  background-image: url(${props => props.imageUrl || 'black'});
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;

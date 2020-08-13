@@ -1,12 +1,11 @@
-//import { store } from "../../store";
-import axios from "axios";
+import axios from 'axios';
 
 class Api {
   static endPointBaseUrl = `https://www.reddit.com/r/reactjs`;
 
   static defaultHeaders = () => {
     const headers = {
-      Accept: "application/json",
+      Accept: 'application/json',
     };
 
     return headers;
