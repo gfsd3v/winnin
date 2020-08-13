@@ -1,7 +1,5 @@
 ## Scripts
 
-In the project root dir we have the following scripts:
-
 First, is mandatory to run this script before any other, this will install all the project dependencies.
 ### `yarn install / npm install`
 
