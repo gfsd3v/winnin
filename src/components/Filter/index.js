@@ -7,7 +7,7 @@ const Filter = ({ selectedFilter, onFilter = () => {} }) => (
   <FilterWrapper>
     <Button
       width="175px"
-      margin="0 25px"
+      margin="0 5px"
       active={selectedFilter.filterValue === 'hot'}
       onClick={() => onFilter({ filterValue: 'hot', force: true })}
     >
@@ -15,7 +15,7 @@ const Filter = ({ selectedFilter, onFilter = () => {} }) => (
     </Button>
     <Button
       width="175px"
-      margin="0 25px"
+      margin="0 5px"
       active={selectedFilter.filterValue === 'new'}
       onClick={() => onFilter({ filterValue: 'new', force: true })}
     >
@@ -23,7 +23,7 @@ const Filter = ({ selectedFilter, onFilter = () => {} }) => (
     </Button>
     <Button
       width="175px"
-      margin="0 25px"
+      margin="0 5px"
       active={selectedFilter.filterValue === 'rising'}
       onClick={() => onFilter({ filterValue: 'rising', force: true })}
     >

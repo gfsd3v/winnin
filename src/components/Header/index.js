@@ -1,10 +1,9 @@
 import React from 'react';
-import Text from 'components/Text';
 import { HeaderWrapper } from './styled';
 
 const Header = () => (
   <HeaderWrapper>
-    <Text fontSize="2em">REACTJS</Text>
+    REACT<div>JS</div>
   </HeaderWrapper>
 );
 
